@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Records</title>
+    <style>
+        body
+            {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            
+        }
+        
+        .navbar {
+    background-color: #2d4647;
+    overflow: hidden;
+    padding: 10px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand h2 {
+    margin: 0;
+}
+.login-button button {
+    background-color: #fff;
+    color: #2d4647;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+   
+}
+
+.login-button button:hover {
+    background-color: #ddd;
+}
+.login-button button a{
+    text-decoration: none;
+
+}
+
+.table,th,td
+     {    
+        
+        border: 1px solid #ddd;
+margin-left: auto;  
+margin-right: auto; 
+padding: 8px; 
+border-collapse: collapse;    
+width: 500px;  
+text-align: center;  
+font-size: 20px;  
+margin-top: 20px;
+}
+section{
+    display: flex;
+    
+
+}
+tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+section ul li{
+    
+    background-color: #ddd;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    padding: 5px;
+    margin: 12px;
+    cursor: pointer;
+    display: inline-block;
+    color: black
+    
+}
+
+section ul li:hover{
+    background-color: #ddd3d3;
+    
+}
+h1{
+
+padding: 10px 430px;
+  margin: 10px 70px;
+ 
+ 
+
+}
+section ul li a{
+    text-decoration: none;
+    color: black;
+
+}
+.attendence-list{
+    
+    display: block;
+}
+.del{
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="navbar">
+            <div class="brand">
+                <h2>Attendance Management System</h2>
+            </div>
+            <div class="login-button">
+                <button><a href="adminlog.html"> Logout </a></button>
+            </div>
+            
+           
+        </div>
+    </header>
+
+    <section>
+        
+
+        <ul>
+            <li>Records</li>
+            <li><a href="report.html"> Generte Report</a></li>
+            <li><a href="sysreport.html"> System Report </a></li>
+            <li><a href="grade.html"> Grading System </a></li>
+        </ul>
+    </section>
+<div class="attendence-list">
+    <h1> Attendance Record </h1>
+
+    <section class="table">
+        
+        <table >
+            <thead>
+                <tr>
+            <th>Name</th>
+            <th>Attendance</th>
+            <th>Percentage</th>
+            <th>Delete Record</th>
+            
+        </tr>
+        <tr>
+            <td>Ali</td>
+            <td>30</td>
+            <td>90%</td>
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+            </tr>
+        <tr>
+            <td>Imran</td>
+            <td>25</td>
+            <td>80%</td>
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+        </tr>
+        <tr>
+            <td>Bilal</td>
+            <td>26</td>
+            <td>90%</td>
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+        </tr>
+        <tr>
+            <td>Saim</td>
+            <td>29</td>
+            <td>90%</td>
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+        </tr>
+        <tr>
+            <td>Kashif</td>
+            <td>30</td>
+            <td>100%</td>
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+        </tr>
+        <tr>
+            <td>Fatima</td>
+            <td>23</td>
+            <td>75%</td>
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+        </tr>
+        <tr>
+            <td>Urooj</td>
+            <td>20</td>
+            <td>60%</td>
+
+            <td><button  onclick="deleteRow(this)"> Delete</button>
+        </tr>
+
+
+        </thead> 
+        <tbody>
+        
+        
+    </tbody>
+        </table>
+        
+    </section>
+</div>
+<script>
+     function deleteRow(button) {
+    
+    var cell = button.parentNode;
+
+   
+    var row = cell.parentNode;
+
+    
+    var tbody = row.parentNode;
+
+    
+    tbody.removeChild(row);
+  }
+</script>
+</body>
+</html>

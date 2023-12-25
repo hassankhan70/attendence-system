@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade System</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-panel {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ddd;
+    color: black;
+    padding: 8px 12px;
+    border: 0.5 solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #ccc3c3;
+}
+
+#gradeResult {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+.navbar {
+    background-color: #2d4647;
+    overflow: hidden;
+    padding: 0px 18px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    height: 60%;
+}
+section{
+    display: flex;
+    
+
+}
+section ul li{
+    background-color: #ddd;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    padding: 5px;
+    margin: 12px;
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    
+}
+section ul li:hover{
+    background-color: #ddd3d3;
+    
+}
+.login-button button {
+    background-color: #fff;
+    color: black;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+   
+}
+.login-button button:hover {
+    background-color: #ddd;
+}
+.login-button button a{
+    text-decoration: none;
+
+}
+section h1{
+
+    color: black;
+
+}
+section ul li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="brand">
+                <h2>Attendance Management System</h2>
+            </div>
+            <div class="login-button">
+                <button><a href="adminlog.html"> Logout </a></button>
+            </div>
+            
+            
+        </div>
+    </header>
+    <section>
+
+        <ul>
+            <li><a href="record.html">Records</a> </li>
+            <li><a href="report.html">Generte Report</a></li>
+            <li><a href="sysreport.html">System Report</a> </li>
+            <li><a href="grade.html">Grading System</a></li>
+        </ul>
+    </section>
+    <div class="admin-panel">
+        <h2>Attendance Grading System</h2>
+
+        <!-- Input for Attendance Days -->
+        <label for="attendanceDays">Enter Attendance Days:</label>
+        <input type="number" id="attendanceDays" placeholder="Enter attendance days">
+        <button onclick="calculateGrade()">Calculate Grade</button>
+
+        <!-- Display Grade -->
+        <div id="gradeResult"></div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+    // Get the input value
+    var attendanceDays = document.getElementById('attendanceDays').value;
+
+    // Convert the input value to a number
+    var daysAttended = parseInt(attendanceDays, 10);
+
+    // Check the grading system
+    var grade = calculateGradeBasedOnAttendance(daysAttended);
+
+    // Display the result
+    var resultElement = document.getElementById('gradeResult');
+    resultElement.textContent = 'Grade: ' + grade;
+}
+
+function calculateGradeBasedOnAttendance(daysAttended) {
+    if (daysAttended >= 26) {
+        return 'A';
+    } else if (daysAttended >= 20) {
+        return 'B';
+    } else if (daysAttended >= 15) {
+        return 'C';
+    } else if (daysAttended >= 10) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}
+
+    </script>
+</body>
+</html>

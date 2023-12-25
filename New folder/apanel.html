@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .log-btn button {
+            background-color: #fff;
+            color: #2d4647;
+            padding: 8px 12px;
+            margin: 15px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        .log-btn button :hover {
+            background-color: #ddd;
+        }
+
+        .log-btn button a {
+            text-decoration: none;
+        }
+
+        .navbar {
+            background-color: #2d4647;
+            overflow: hidden;
+
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            height: 60%;
+        }
+
+        section {
+            display: flex;
+
+
+        }
+
+        section ul li {
+            background-color: #ddd;
+            border: 0.5px solid black;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            padding: 5px;
+            margin: 12px;
+            cursor: pointer;
+            display: inline-block;
+            color: black;
+            
+        }
+      
+
+        section ul li:hover {
+            background-color: #ddd3d3;
+
+        }
+
+        .brand h2 {
+    margin: 20px 15px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="brand">
+                <h2>Attendance Management System</h2>
+
+            </div>
+            <div class="log-btn">
+                <button><a href="userlog.html"> Logout</a></button>
+
+            </div>
+
+
+        </div>
+    </header>
+    <section>
+        <ul>
+            <li><a href="record.html"> Records</a> </li>
+            <li><a href="report.html"> Generte Report</a></li>
+            <li><a href="sysreport.html"> System Report</a></li>
+            <li><a href="grade.html"> Grade System</a> </li>
+        </ul>
+    </section>
+    
+
+</body>
+
+</html>
